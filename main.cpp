@@ -12,7 +12,7 @@ int main(int argc,char* argv[])
     std::cout<<"info->"<<gnu_get_libc_version()<<std::endl;
 
     /*
-        For file io nothing better ^^ than linux/c low level syscall.
+        For file io nothing sim to be better ^^ than linux/c low level syscall.
     */
     
     // File io routine -> create a file or open it.
