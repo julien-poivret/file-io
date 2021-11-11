@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <gnu/libc-version.h>
+
 int main(int argc,char* argv[])
 {
 
@@ -29,7 +30,7 @@ int main(int argc,char* argv[])
     }
     std::cout<<count*46<<" Bytes have been read"<<std::endl;
 
-    // Cursor at the end Technicaly it allready is but for routine purpose...
+    // Cursor at the end Technicaly it allready there but for routine purpose...
     fseek(fd,0L,SEEK_END);
     // get the file size for result corelation.
     auto file_size = ftell(fd);
