@@ -8,7 +8,7 @@ int main(int argc,char* argv[])
     // glibc version.
     std::cout<<"info->"<<gnu_get_libc_version()<<std::endl;
 
-    // For file io nothing better than low level syscall.
+    // For file io nothing better ^^ than low level syscall.
 
     // File io routine -> create a file.
     FILE* fd = fopen("/home/julien/sd-card/dev-study/Linux-glibc/dat.log","ab+");
