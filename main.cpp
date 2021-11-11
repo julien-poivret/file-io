@@ -31,9 +31,9 @@ int main(int argc,char* argv[])
     fseek(fd,0L, SEEK_SET);
 
     // Then now we are ready to read the file...
-    // - the read is done by chunk of 46 bytes it's fast and ok if you know 
+    // - the read is done by chunk of 47 bytes it's fast and ok if you know 
     //   how the file is writen, if the file is generated (like in this case) by one of your program you can easly predict 
-    //   that it can also be exactly subdivised in n chunks of 46 bytes and so look more accurately and much faster in the targeted
+    //   that it can also be exactly subdivised in n chunks of 47 bytes and so look more accurately and much faster in the targeted
     //   n chunk bytes area of your choice, by scoping the chunk bytes afters bytes, and catch eventually some 
     //   custom escape sequence of your own.
      
