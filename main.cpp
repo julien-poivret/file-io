@@ -1,6 +1,9 @@
 #include <cstdlib>
+#include <unistd.h>
+#include <pwd.h>
 #include <iostream>
 #include <gnu/libc-version.h>
+#include <sys/syscall.h>
 
 /*
           Basic file io under linux.  
@@ -45,6 +48,18 @@ int main(int argc,char* argv[])
     
     // File descriptor stream closed.
     fclose(fd);
+    
+    // glibc function
+    struct passwd* pass = getpwuid(getuid());
+    std::cout<<pass->pw_name<<std::endl;
+
+    // basic chmod syscall same as system("chmod 0660 ./dat.log")
+    auto a = syscall(0x0f,"dat.log",0660);
+    std::cout<<a<<std::endl;
+
+    // like ... 
+    system("chmod 0670 ./dat.log");
+
     return EXIT_SUCCESS;
 
 }
