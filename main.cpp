@@ -30,7 +30,13 @@ int main(int argc,char* argv[])
     // Place the file cursor at the begening.
     fseek(fd,0L, SEEK_SET);
 
-    // Then now we are ready to read the file.
+    // Then now we are ready to read the file...
+    // - the read is done by chunk of 46 bytes it's fast and ok if you know 
+    //   how the file is writen,(if the file is generated (like this case) by one of your program you can easly predict 
+    //   that it can be exactly subdivised n chunks of 46 bytes and so look more accurately and faster in the targeted of
+    //   your choice the n chunk of bytes by simply handling the chunk bytes afters bytes in order to catch eventually some 
+    //   custom escape command of your own.
+     
     char Buffer[46] = "";
     unsigned short count = 0;
     while(fread(&Buffer,1, 46, fd)) {
