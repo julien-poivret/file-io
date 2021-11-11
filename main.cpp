@@ -23,8 +23,8 @@ int main(int argc,char* argv[])
    
     if(fd) {
         // if the file is open or created write or append the following data:
-        char data[46]="Some random value to b writed on the sd card.";
-        std::cout<<fwrite(&data,1,46,fd)<<" Bytes have been writed"<<std::endl;
+        char data[47]="Some random value to be writed on the sd card.";
+        std::cout<<fwrite(&data,1,47,fd)<<" Bytes have been writed"<<std::endl;
     }
 
     // Place the file cursor at the begening.
@@ -37,13 +37,13 @@ int main(int argc,char* argv[])
     //   n chunk bytes area of your choice, by scoping the chunk bytes afters bytes, and catch eventually some 
     //   custom escape sequence of your own.
      
-    char Buffer[46] = "";
+    char Buffer[47] = "";
     unsigned short count = 0;
-    while(fread(&Buffer,1, 46, fd)) {
+    while(fread(&Buffer,1, 47, fd)) {
         count++;
         std::cout<<Buffer<<std::endl;
     }
-    std::cout<<count*46<<" Bytes have been read"<<std::endl;
+    std::cout<<count*47<<" Bytes have been read"<<std::endl;
 
     // Set the cursor at the end of the file Technicaly it's allready there ( but for routine purpose... )
     fseek(fd,0L,SEEK_END);
